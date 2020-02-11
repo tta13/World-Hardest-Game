@@ -30,4 +30,22 @@ public class PlayerScript : MonoBehaviour
             //Debug.Log("You clicked on D");
         }
     }
+
+    void OnTriggerEnter2D(Collider2D target)
+    {
+        if(target.tag == "Enemy")
+        {
+            Debug.Log("You hit an enemy");
+            SceneManager.instance.HitEnemy();
+        }
+        else if(target.tag == "Goal")
+        {
+            Debug.Log("You have reached your goal.");
+            SceneManager.instance.PlayerWon();
+        }
+        else if(target.tag == "GoldenBall")
+        {
+            SceneManager.instance.BallCatched();
+        }
+    }
 }

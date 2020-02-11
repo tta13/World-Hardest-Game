@@ -7,6 +7,7 @@ TagManager:
   - Goal
   - BounceBall
   - Enemy
+  - GoldenBall
   layers:
   - Default
   - TransparentFX
