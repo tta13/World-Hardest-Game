@@ -19,4 +19,12 @@ public class EnemyScript : MonoBehaviour
             transform.position += Vector3.right * enemySpeed * Time.deltaTime;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D target)
+    {
+        if(target.tag == "BounceBall")
+        {
+            moveLeft = !moveLeft;
+        }
+    }
 }
