@@ -388,7 +388,6 @@ GameObject:
   m_Component:
   - component: {fileID: 317313833}
   - component: {fileID: 317313834}
-  - component: {fileID: 317313835}
   m_Layer: 0
   m_Name: Collider 4
   m_TagString: Untagged
@@ -436,27 +435,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16.4, y: 1}
   m_EdgeRadius: 0
---- !u!50 &317313835
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317313832}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &409542985
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +607,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.4269313, g: 0.6423414, b: 0.735849, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -799,7 +777,6 @@ GameObject:
   m_Component:
   - component: {fileID: 604711523}
   - component: {fileID: 604711524}
-  - component: {fileID: 604711525}
   m_Layer: 0
   m_Name: Collider 3
   m_TagString: Untagged
@@ -847,27 +824,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16.4, y: 1}
   m_EdgeRadius: 0
---- !u!50 &604711525
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604711522}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &783447497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,7 +984,7 @@ MonoBehaviour:
   initialOddEnemyPosition: {x: 3.5, y: 1}
   initialOddGoalEnemyPosition: {x: 7.6, y: 0}
   initialEvenGoalEnemyPosition: {x: 5.5, y: 1.5}
-  initianGoldenBallPosition: {x: 6.5, y: -3}
+  initianGoldenBallPosition: {x: 6.6, y: -3}
 --- !u!4 &838311142
 Transform:
   m_ObjectHideFlags: 0
@@ -1622,7 +1578,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1525107252}
   - component: {fileID: 1525107253}
-  - component: {fileID: 1525107254}
   m_Layer: 0
   m_Name: Collider 2
   m_TagString: Untagged
@@ -1670,27 +1625,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 1}
   m_EdgeRadius: 0
---- !u!50 &1525107254
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1525107251}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1693626266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,7 +1748,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1824957239}
   - component: {fileID: 1824957240}
-  - component: {fileID: 1824957241}
   m_Layer: 0
   m_Name: Collider 8
   m_TagString: Untagged
@@ -1862,27 +1795,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 7.1}
   m_EdgeRadius: 0
---- !u!50 &1824957241
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824957238}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1986849986
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,7 +1925,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2062104411}
   - component: {fileID: 2062104412}
-  - component: {fileID: 2062104413}
   m_Layer: 0
   m_Name: Collider 1
   m_TagString: Untagged
@@ -2061,27 +1972,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 1}
   m_EdgeRadius: 0
---- !u!50 &2062104413
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062104410}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &2099337095
 GameObject:
   m_ObjectHideFlags: 0
