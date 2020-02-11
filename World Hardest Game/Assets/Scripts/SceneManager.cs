@@ -6,10 +6,10 @@ public class SceneManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject[] enemies;
-    Vector2 initialPlayerPosition = new Vector2(-6.0f, -2.0f);
-    Vector2 initialEvenEnemyPosition = new Vector2(-3.5f, 2.0f);
-    Vector2 initialOddEnemyPosition = new Vector2(3.5f, 1.0f);
-    float playerSpeed = 2.0f;
+    public Vector2 initialPlayerPosition = new Vector2(-6.0f, -2.0f);
+    public Vector2 initialEvenEnemyPosition = new Vector2(-3.5f, 2.0f);
+    public Vector2 initialOddEnemyPosition = new Vector2(3.5f, 1.0f);
+    public float playerSpeed = 2.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +39,7 @@ public class SceneManager : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            player. transform.position += Vector3.left * playerSpeed * Time.deltaTime;
+            player.transform.position += Vector3.left * playerSpeed * Time.deltaTime;
             //Debug.Log("You clicked on A");
         }
         if (Input.GetKey(KeyCode.S))

@@ -560,6 +560,7 @@ GameObject:
   - component: {fileID: 543801213}
   - component: {fileID: 543801215}
   - component: {fileID: 543801214}
+  - component: {fileID: 543801216}
   m_Layer: 0
   m_Name: Enemy (3)
   m_TagString: Enemy
@@ -647,6 +648,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &543801216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543801212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb3f504e9be87a4195ce2b18c8b81dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 4
+  moveLeft: 1
 --- !u!1 &604711522
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +777,10 @@ MonoBehaviour:
   - {fileID: 1350685280}
   - {fileID: 543801212}
   - {fileID: 1069581778}
+  initialPlayerPosition: {x: -6, y: -2}
+  initialEvenEnemyPosition: {x: -3.5, y: 2}
+  initialOddEnemyPosition: {x: 3.5, y: 1}
+  playerSpeed: 2
 --- !u!4 &838311142
 Transform:
   m_ObjectHideFlags: 0
@@ -787,6 +806,7 @@ GameObject:
   - component: {fileID: 961406236}
   - component: {fileID: 961406238}
   - component: {fileID: 961406237}
+  - component: {fileID: 961406239}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Enemy
@@ -874,6 +894,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &961406239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961406235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb3f504e9be87a4195ce2b18c8b81dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 4
+  moveLeft: 1
 --- !u!1 &1033580717
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +998,7 @@ GameObject:
   - component: {fileID: 1069581779}
   - component: {fileID: 1069581781}
   - component: {fileID: 1069581780}
+  - component: {fileID: 1069581782}
   m_Layer: 0
   m_Name: Enemy (4)
   m_TagString: Enemy
@@ -1051,6 +1086,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1069581782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069581778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb3f504e9be87a4195ce2b18c8b81dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 4
+  moveLeft: 0
 --- !u!1 &1169148087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1146,7 @@ GameObject:
   - component: {fileID: 1350685281}
   - component: {fileID: 1350685283}
   - component: {fileID: 1350685282}
+  - component: {fileID: 1350685284}
   m_Layer: 0
   m_Name: Enemy (2)
   m_TagString: Enemy
@@ -1184,6 +1234,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1350685284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350685280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb3f504e9be87a4195ce2b18c8b81dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 4
+  moveLeft: 0
 --- !u!1 &1525107251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1338,7 @@ GameObject:
   - component: {fileID: 1693626267}
   - component: {fileID: 1693626268}
   - component: {fileID: 1693626269}
+  - component: {fileID: 1693626270}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -1361,6 +1426,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &1693626270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693626266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb3f504e9be87a4195ce2b18c8b81dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 4
+  moveLeft: 0
 --- !u!1 &1824957238
 GameObject:
   m_ObjectHideFlags: 0
