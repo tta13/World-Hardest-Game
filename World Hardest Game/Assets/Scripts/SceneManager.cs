@@ -15,7 +15,7 @@ public class SceneManager : MonoBehaviour
     public Vector2 initialPlayerPosition = new Vector2(-6.5f, -0.5f);
     public Vector2 initialEvenEnemyPosition = new Vector2(-3.5f, 2.0f);
     public Vector2 initialOddEnemyPosition = new Vector2(3.5f, 1.0f);
-    public Vector2 initialOddGoalEnemyPosition = new Vector2(7.5f, 0.0f);
+    public Vector2 initialOddGoalEnemyPosition = new Vector2(7.6f, 0.0f);
     public Vector2 initialEvenGoalEnemyPosition = new Vector2(5.5f, 2.0f);
     public Vector2 initianGoldenBallPosition = new Vector2(6.5f, -3.0f);
 

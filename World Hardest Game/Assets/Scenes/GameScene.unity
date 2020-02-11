@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81aba0c6e0618d40b96c8242ec3daf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
+  playerSpeed: 2
 --- !u!50 &253905658
 Rigidbody2D:
   serializedVersion: 4
@@ -1026,7 +1026,7 @@ MonoBehaviour:
   initialPlayerPosition: {x: -6, y: -2}
   initialEvenEnemyPosition: {x: -3.5, y: 2}
   initialOddEnemyPosition: {x: 3.5, y: 1}
-  initialOddGoalEnemyPosition: {x: 7.5, y: 0}
+  initialOddGoalEnemyPosition: {x: 7.6, y: 0}
   initialEvenGoalEnemyPosition: {x: 5.5, y: 1.5}
   initianGoldenBallPosition: {x: 6.5, y: -3}
 --- !u!4 &838311142
