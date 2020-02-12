@@ -41,6 +41,7 @@ public class PlayerScript : MonoBehaviour
         if(target.tag == "Enemy")
         {
             Debug.Log("You hit an enemy");
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             StartCoroutine("FadeOut");
             SceneManager.instance.HitEnemy();
         }
