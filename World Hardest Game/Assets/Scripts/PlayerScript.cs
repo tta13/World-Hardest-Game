@@ -67,4 +67,5 @@ public class PlayerScript : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
     }
+
 }

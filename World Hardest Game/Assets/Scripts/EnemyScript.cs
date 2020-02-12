@@ -8,7 +8,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     private bool moveLeft;
 
-    void Update()
+    void FixedUpdate()
     {
         if(moveLeft)
         {
@@ -27,4 +27,5 @@ public class EnemyScript : MonoBehaviour
             moveLeft = !moveLeft;
         }
     }
+
 }

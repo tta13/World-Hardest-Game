@@ -68,7 +68,7 @@ public class SceneManager : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         timer += Time.deltaTime;
         if(timer >= interpolationPeriod && gotBall)
