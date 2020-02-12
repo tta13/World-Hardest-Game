@@ -9,6 +9,7 @@ public class SceneManager : MonoBehaviour
     public GameObject player;
     public GameObject[] enemies;
     public GameObject[] goalEnemies;
+    public GameObject[] allEnemies;
     public GameObject goldenBall;
     public GameObject goal;
 
@@ -76,6 +77,12 @@ public class SceneManager : MonoBehaviour
     {
         goldenBall.GetComponent<SpriteRenderer>().enabled = false;
         goal.SetActive(true);
+        allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in allEnemies)
+        {
+            Debug.Log("Speeding Up Enemies");
+            enemy.GetComponent<EnemyScript>().enemySpeed = 6.0f;
+        }
         Debug.Log("Congratulations, you catched the Golden Ball, now, run back to your base!!");
     }
 
