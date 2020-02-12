@@ -12,24 +12,24 @@ public class PlayerScript : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             transform.position += Vector3.up * playerSpeed * Time.deltaTime;
             //Debug.Log("You clicked on W");
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position += Vector3.left * playerSpeed * Time.deltaTime;
             //Debug.Log("You clicked on A");
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             transform.position += Vector3.down * playerSpeed * Time.deltaTime;
             //Debug.Log("You clicked on S");
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += Vector3.right * playerSpeed * Time.deltaTime;
             //Debug.Log("You clicked on D");

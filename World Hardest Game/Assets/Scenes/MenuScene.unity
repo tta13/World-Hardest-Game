@@ -189,10 +189,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Jogue utilizando as teclas W, A, S e D para movimentar o quadrado vermelho.
-    Seu objetivo \xE9 sair da sua base, encontrar a bola de ouro e voltar \xE0 sua
-    base rapidamente e de forma segura.Tente evitar os azuis, eles s\xE3o seus inimigos.
-    Boa Sorte!"
+  m_Text: "Jogue utilizando as teclas W, A, S e D ou as setas para movimentar o quadrado
+    vermelho. Seu objetivo \xE9 sair da sua base, encontrar a bola de ouro e voltar
+    \xE0 sua base rapidamente e de forma segura.Tente evitar os azuis, eles s\xE3o
+    seus inimigos. Boa Sorte!"
 --- !u!222 &4891114
 CanvasRenderer:
   m_ObjectHideFlags: 0
