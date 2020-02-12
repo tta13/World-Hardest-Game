@@ -13,7 +13,9 @@ public class SceneManager : MonoBehaviour
     public GameObject goldenBall;
     public GameObject goal;
     public GameObject camera;
-
+    public GameObject gamePanel;
+    public GameObject winPanel;
+    
     public Vector2 initialPlayerPosition = new Vector2(-6.5f, -0.5f);
     public Vector2 initialEvenEnemyPosition = new Vector2(-3.5f, 2.0f);
     public Vector2 initialOddEnemyPosition = new Vector2(3.5f, 1.0f);
@@ -72,7 +74,7 @@ public class SceneManager : MonoBehaviour
         if(timer >= interpolationPeriod && gotBall)
         {
             timer = 0.0f;
-            StartCoroutine(CameraShake(0.15f));
+            StartCoroutine(CameraShake(0.22f));
         }
     }
 
@@ -106,7 +108,13 @@ public class SceneManager : MonoBehaviour
     public void PlayerWon()
     {
         Time.timeScale = 0f;
-        StartCoroutine(WinRestart());
+        gamePanel.SetActive(false);
+        winPanel.SetActive(true);
+    }
+
+    public void CallRestart()
+    {
+        StartCoroutine("WinRestart");
     }
 
     IEnumerator WinRestart()
