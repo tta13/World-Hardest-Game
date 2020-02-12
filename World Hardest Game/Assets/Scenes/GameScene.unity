@@ -757,7 +757,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.249739
+  orthographic size: 6.391627
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1191,6 +1191,7 @@ MonoBehaviour:
   camera: {fileID: 519420028}
   gamePanel: {fileID: 15854000}
   winPanel: {fileID: 213000547}
+  speedUp: 0.5
   initialPlayerPosition: {x: -6, y: -2}
   initialEvenEnemyPosition: {x: -3.5, y: 2}
   initialOddEnemyPosition: {x: 3.5, y: 1}
