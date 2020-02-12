@@ -12,6 +12,7 @@ public class SceneManager : MonoBehaviour
     public GameObject[] allEnemies;
     public GameObject goldenBall;
     public GameObject goal;
+    public GameObject camera;
 
     public Vector2 initialPlayerPosition = new Vector2(-6.5f, -0.5f);
     public Vector2 initialEvenEnemyPosition = new Vector2(-3.5f, 2.0f);
@@ -19,6 +20,10 @@ public class SceneManager : MonoBehaviour
     public Vector2 initialOddGoalEnemyPosition = new Vector2(7.6f, 0.0f);
     public Vector2 initialEvenGoalEnemyPosition = new Vector2(5.5f, 2.0f);
     public Vector2 initianGoldenBallPosition = new Vector2(6.5f, -3.0f);
+
+    private bool gotBall = false;
+    private float interpolationPeriod = 2.0f;
+    private float timer = 0.0f;
 
     void Awake() 
     {
@@ -61,6 +66,16 @@ public class SceneManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if(timer >= interpolationPeriod && gotBall)
+        {
+            timer = 0.0f;
+            StartCoroutine(CameraShake(0.15f));
+        }
+    }
+
     public void HitEnemy()
     {
         Time.timeScale = 0f;
@@ -84,6 +99,8 @@ public class SceneManager : MonoBehaviour
             enemy.GetComponent<EnemyScript>().enemySpeed = 6.0f;
         }
         Debug.Log("Congratulations, you catched the Golden Ball, now, run back to your base!!");
+        StartCoroutine(CameraShake(0.4f));
+        gotBall = true;
     }
 
     public void PlayerWon()
@@ -96,5 +113,20 @@ public class SceneManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
+
+    IEnumerator CameraShake(float duration)
+    {
+        Vector3 originalPos = camera.transform.localPosition;
+        float timeElapsed = 0.0f;
+        while(timeElapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f)*0.4f;
+            float y = Random.Range(-1f, 1f)*0.4f;
+            camera.transform.localPosition = new Vector3(x, y, originalPos.z);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        camera.transform.localPosition = originalPos;
     }
 }

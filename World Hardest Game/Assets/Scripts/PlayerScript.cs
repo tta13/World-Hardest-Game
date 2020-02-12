@@ -5,8 +5,13 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public float playerSpeed = 2.0f;
+    SpriteRenderer rend;
 
-    // Update is called once per frame
+    void Start()
+    {
+        rend = GetComponent<SpriteRenderer>();
+    }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
@@ -36,6 +41,7 @@ public class PlayerScript : MonoBehaviour
         if(target.tag == "Enemy")
         {
             Debug.Log("You hit an enemy");
+            StartCoroutine("FadeOut");
             SceneManager.instance.HitEnemy();
         }
         else if(target.tag == "Goal")
@@ -46,6 +52,17 @@ public class PlayerScript : MonoBehaviour
         else if(target.tag == "GoldenBall")
         {
             SceneManager.instance.BallCatched();
+        }
+    }
+
+    void FadeOut()
+    {
+
+        Debug.Log("Fading Out");
+        while(rend.material.color.a > 0)
+        {
+            rend.material.color = new Color(rend.material.color.r, rend.material.color.g,
+                rend.material.color.b, rend.material.color.a - (0.05f * Time.deltaTime));
         }
     }
 }
