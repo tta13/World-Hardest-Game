@@ -55,14 +55,15 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    void FadeOut()
+    IEnumerator FadeOut()
     {
-
         Debug.Log("Fading Out");
-        while(rend.material.color.a > 0)
+        for(float f = 1f; f >= -0.05f; f -= 0.05f)
         {
-            rend.material.color = new Color(rend.material.color.r, rend.material.color.g,
-                rend.material.color.b, rend.material.color.a - (0.05f * Time.deltaTime));
+            Color cor = rend.material.color;
+            cor.a = f;
+            rend.material.color = cor;
+            yield return new WaitForSeconds(0.05f);
         }
     }
 }

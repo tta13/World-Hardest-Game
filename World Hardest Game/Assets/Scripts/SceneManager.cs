@@ -74,19 +74,19 @@ public class SceneManager : MonoBehaviour
         if(timer >= interpolationPeriod && gotBall)
         {
             timer = 0.0f;
-            StartCoroutine(CameraShake(0.22f));
+            StartCoroutine(CameraShake(0.25f));
         }
     }
 
     public void HitEnemy()
     {
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         StartCoroutine(Restart());
     }
 
     IEnumerator Restart()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(1f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
