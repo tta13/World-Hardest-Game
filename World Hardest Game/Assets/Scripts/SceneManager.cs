@@ -15,6 +15,7 @@ public class SceneManager : MonoBehaviour
     public GameObject camera;
     public GameObject gamePanel;
     public GameObject winPanel;
+    public float speedUp = 0.5f;
     
     public Vector2 initialPlayerPosition = new Vector2(-6.5f, -0.5f);
     public Vector2 initialEvenEnemyPosition = new Vector2(-3.5f, 2.0f);
@@ -98,8 +99,9 @@ public class SceneManager : MonoBehaviour
         foreach (GameObject enemy in allEnemies)
         {
             Debug.Log("Speeding Up Enemies");
-            enemy.GetComponent<EnemyScript>().enemySpeed = 6.0f;
+            enemy.GetComponent<EnemyScript>().enemySpeed += enemy.GetComponent<EnemyScript>().enemySpeed * speedUp;
         }
+        player.GetComponent<PlayerScript>().playerSpeed += player.GetComponent<PlayerScript>().playerSpeed * (speedUp + 0.1f);
         Debug.Log("Congratulations, you catched the Golden Ball, now, run back to your base!!");
         StartCoroutine(CameraShake(0.4f));
         gotBall = true;
