@@ -740,7 +740,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.57627267, g: 0.6594207, b: 0.6981132, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -757,7 +757,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.391627
+  orthographic size: 6.2687955
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -781,7 +781,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1738218452}
@@ -2422,6 +2422,7 @@ GameObject:
   - component: {fileID: 1986849987}
   - component: {fileID: 1986849990}
   - component: {fileID: 1986849989}
+  - component: {fileID: 1986849991}
   m_Layer: 0
   m_Name: GoldenBall
   m_TagString: GoldenBall
@@ -2530,6 +2531,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &1986849991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986849986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95eec186fe3c145488a360c161d2f08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationRate: 120
 --- !u!1 &2062104410
 GameObject:
   m_ObjectHideFlags: 0

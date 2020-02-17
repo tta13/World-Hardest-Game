@@ -12,11 +12,11 @@ public class EnemyScript : MonoBehaviour
     {
         if(moveLeft)
         {
-            transform.position += Vector3.left * enemySpeed * Time.deltaTime;
+            transform.position += Vector3.left * enemySpeed * Time.fixedDeltaTime;
         }
         else
         {
-            transform.position += Vector3.right * enemySpeed * Time.deltaTime;
+            transform.position += Vector3.right * enemySpeed * Time.fixedDeltaTime;
         }
     }
 

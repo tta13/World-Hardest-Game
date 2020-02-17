@@ -71,7 +71,7 @@ public class SceneManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        timer += Time.deltaTime;
+        timer += Time.fixedDeltaTime;
         if(timer >= interpolationPeriod && gotBall)
         {
             timer = 0.0f;
@@ -94,6 +94,7 @@ public class SceneManager : MonoBehaviour
     public void BallCatched()
     {
         goldenBall.GetComponent<SpriteRenderer>().enabled = false;
+        goldenBall.GetComponent<CircleCollider2D>().enabled = false;
         goal.SetActive(true);
         allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in allEnemies)
