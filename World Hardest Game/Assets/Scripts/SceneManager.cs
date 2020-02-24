@@ -151,20 +151,36 @@ public class SceneManager : MonoBehaviour
     public void PauseGame()
     {
         pauseButton.SetActive(false);
-        Time.timeScale = 0f;
         pausePanel.SetActive(true);
+        StartCoroutine(PauseMenuStart());
     }
 
     public void ResumeGame()
     {
-        pausePanel.SetActive(false);
         Time.timeScale = 1f;
-        pauseButton.SetActive(true);
+        StartCoroutine(PauseMenuEnd());
     }
 
     public void LoadMenu()
     {
         Time.timeScale = 1f;
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    IEnumerator PauseMenuStart()
+    {
+        Animator a = pausePanel.GetComponent<Animator>();
+        a.SetBool("Open", true);
+        yield return new WaitForSeconds(0.833f);
+        Time.timeScale = 0f;
+    }
+
+    IEnumerator PauseMenuEnd()
+    {
+        Animator a = pausePanel.GetComponent<Animator>();
+        a.SetBool("Open", false);
+        yield return new WaitForSeconds(0.833f);
+        pausePanel.SetActive(false);
+        pauseButton.SetActive(true);
     }
 }
