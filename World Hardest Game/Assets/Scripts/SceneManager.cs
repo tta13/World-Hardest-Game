@@ -15,6 +15,8 @@ public class SceneManager : MonoBehaviour
     public GameObject cam;
     public GameObject gamePanel;
     public GameObject winPanel;
+    public GameObject pauseButton;
+    public GameObject pausePanel;
     public float speedUp = 0.5f;
     
     public Vector2 initialEvenEnemyPosition = new Vector2(-3.5f, 2.0f);
@@ -144,5 +146,25 @@ public class SceneManager : MonoBehaviour
             yield return null;
         }
         cam.transform.localPosition = originalPos;
+    }
+
+    public void PauseGame()
+    {
+        pauseButton.SetActive(false);
+        Time.timeScale = 0f;
+        pausePanel.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f;
+        pauseButton.SetActive(true);
+    }
+
+    public void LoadMenu()
+    {
+        Time.timeScale = 1f;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }
