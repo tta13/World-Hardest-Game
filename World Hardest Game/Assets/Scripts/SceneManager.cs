@@ -12,7 +12,7 @@ public class SceneManager : MonoBehaviour
     public GameObject[] allEnemies;
     public GameObject goldenBall;
     public GameObject goal;
-    public GameObject camera;
+    public GameObject cam;
     public GameObject gamePanel;
     public GameObject winPanel;
     public float speedUp = 0.5f;
@@ -38,7 +38,7 @@ public class SceneManager : MonoBehaviour
     void Start()
     {
         float x = Random.Range(-8f, -5.5f);
-        float y = Random.Range(-3.5f, 3.5f);
+        float y = Random.Range(-3.5f, 0f);
         player.transform.position = new Vector2(x, y);
         goldenBall.transform.position = initianGoldenBallPosition;
         for(int i = 0; i<enemies.Length; i++)
@@ -83,6 +83,7 @@ public class SceneManager : MonoBehaviour
     public void HitEnemy()
     {
         //Time.timeScale = 0f;
+        FindObjectOfType<AudioManager>().PlayAudio("PlayerDeath");
         StartCoroutine(Restart());
     }
 
@@ -94,6 +95,7 @@ public class SceneManager : MonoBehaviour
 
     public void BallCatched()
     {
+        FindObjectOfType<AudioManager>().PlayAudio("Catch");
         goldenBall.GetComponent<SpriteRenderer>().enabled = false;
         goldenBall.GetComponent<CircleCollider2D>().enabled = false;
         goal.SetActive(true);
@@ -111,6 +113,7 @@ public class SceneManager : MonoBehaviour
 
     public void PlayerWon()
     {
+        FindObjectOfType<AudioManager>().PlayAudio("Win");
         Time.timeScale = 0f;
         gamePanel.SetActive(false);
         winPanel.SetActive(true);
@@ -129,16 +132,17 @@ public class SceneManager : MonoBehaviour
 
     IEnumerator CameraShake(float duration)
     {
-        Vector3 originalPos = camera.transform.localPosition;
+        FindObjectOfType<AudioManager>().PlayAudio("Explosion");
+        Vector3 originalPos = cam.transform.localPosition;
         float timeElapsed = 0.0f;
         while(timeElapsed < duration)
         {
             float x = Random.Range(-1f, 1f)*0.4f;
             float y = Random.Range(-1f, 1f)*0.4f;
-            camera.transform.localPosition = new Vector3(x, y, originalPos.z);
+            cam.transform.localPosition = new Vector3(x, y, originalPos.z);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-        camera.transform.localPosition = originalPos;
+        cam.transform.localPosition = originalPos;
     }
 }
