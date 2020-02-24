@@ -17,7 +17,6 @@ public class SceneManager : MonoBehaviour
     public GameObject winPanel;
     public float speedUp = 0.5f;
     
-    public Vector2 initialPlayerPosition = new Vector2(-6.5f, -0.5f);
     public Vector2 initialEvenEnemyPosition = new Vector2(-3.5f, 2.0f);
     public Vector2 initialOddEnemyPosition = new Vector2(3.5f, 1.0f);
     public Vector2 initialOddGoalEnemyPosition = new Vector2(7.6f, 0.0f);
@@ -38,7 +37,9 @@ public class SceneManager : MonoBehaviour
 
     void Start()
     {
-        player.transform.position = initialPlayerPosition;
+        float x = Random.Range(-8f, -5.5f);
+        float y = Random.Range(-3.5f, 3.5f);
+        player.transform.position = new Vector2(x, y);
         goldenBall.transform.position = initianGoldenBallPosition;
         for(int i = 0; i<enemies.Length; i++)
         {

@@ -1192,7 +1192,7 @@ MonoBehaviour:
   gamePanel: {fileID: 15854000}
   winPanel: {fileID: 213000547}
   speedUp: 0.5
-  initialPlayerPosition: {x: -6, y: -2}
+  initialPlayerPosition: {x: -5.5, y: -3.5}
   initialEvenEnemyPosition: {x: -3.5, y: 2}
   initialOddEnemyPosition: {x: 3.5, y: 1}
   initialOddGoalEnemyPosition: {x: 7.6, y: 0}
