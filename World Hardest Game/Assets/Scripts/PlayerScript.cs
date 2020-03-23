@@ -25,8 +25,8 @@ public class PlayerScript : CharacterScript
 
     void GetInput()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
     }
 
     private void Update()

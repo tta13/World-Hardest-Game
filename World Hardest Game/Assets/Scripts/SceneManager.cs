@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
+    #region PublicFields
     public static SceneManager instance;
 
     public GameObject player;
@@ -15,12 +16,16 @@ public class SceneManager : MonoBehaviour
     public GameObject winPanel;
     public GameObject pauseButton;
     public GameObject pausePanel;
-    public float speedUp = 0.5f;
-   
+    #endregion
+
+    #region PrivateFields
+    private float speedUp = 0.5f;
     private bool gotBall = false;
     private float interpolationPeriod = 2.0f;
     private float timer = 0.0f;
+    #endregion
 
+    #region Monobehaviour
     void Awake() 
     {
         if (instance == null)
@@ -38,25 +43,21 @@ public class SceneManager : MonoBehaviour
             StartCoroutine(cam.GetComponent<CameraShaker>().Shake(0.25f, 0.4f));
         }
     }
+    #endregion
 
+    #region GameManaging
     public void PlayerDied()
     {
         FindObjectOfType<AudioManager>().PlayAudio("PlayerDeath");
-        StartCoroutine(Restart());
+        StartCoroutine(Restart(1f));
     }
 
-    IEnumerator Restart()
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-    }
 
     public void BallCatched()
     {
         FindObjectOfType<AudioManager>().PlayAudio("Catch");
 
-        goldenBall.GetComponent<SpriteRenderer>().enabled = false;
-        goldenBall.GetComponent<CircleCollider2D>().enabled = false;
+        goldenBall.SetActive(false);
 
         goal.SetActive(true);
 
@@ -64,9 +65,9 @@ public class SceneManager : MonoBehaviour
         foreach (GameObject enemy in allEnemies)
         {
             Debug.Log("Speeding Up Enemies");
-            enemy.GetComponent<EnemyScript>().speed += enemy.GetComponent<EnemyScript>().speed * speedUp;
+            enemy.GetComponent<EnemyScript>().SpeedUp(speedUp);
         }
-        player.GetComponent<PlayerScript>().speed += player.GetComponent<PlayerScript>().speed * (speedUp + 0.1f);
+        player.GetComponent<PlayerScript>().SpeedUp(speedUp + 0.1f);
 
         Debug.Log("You catched the Golden Ball, now, run back to your base!!");
 
@@ -80,18 +81,21 @@ public class SceneManager : MonoBehaviour
         FindObjectOfType<AudioManager>().PlayAudio("Win");
         Time.timeScale = 0f;
         gamePanel.SetActive(false);
+        pauseButton.SetActive(false);
         winPanel.SetActive(true);
     }
 
+    IEnumerator Restart(float sleepTime)
+    {
+        yield return new WaitForSecondsRealtime(sleepTime);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
+    #endregion
+
+    #region UIMethods
     public void CallRestart()
     {
-        StartCoroutine("WinRestart");
-    }
-
-    IEnumerator WinRestart()
-    {
-        yield return new WaitForSecondsRealtime(0f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        StartCoroutine(Restart(0f));
     }
         
     public void PauseGame()
@@ -129,4 +133,5 @@ public class SceneManager : MonoBehaviour
         pausePanel.SetActive(false);
         pauseButton.SetActive(true);
     }
+    #endregion
 }

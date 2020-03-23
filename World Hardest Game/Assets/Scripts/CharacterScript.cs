@@ -6,7 +6,6 @@ public abstract class CharacterScript : MonoBehaviour
 {
     public float speed;
     
-
     void Start()
     {
         Init();
@@ -23,4 +22,9 @@ public abstract class CharacterScript : MonoBehaviour
     }
 
     public abstract void Move();
+    
+    public void SpeedUp(float speedUp)
+    {
+        this.speed *= (1f + speedUp);
+    }
 }
