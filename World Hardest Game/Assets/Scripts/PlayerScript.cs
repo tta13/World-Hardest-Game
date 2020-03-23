@@ -47,7 +47,7 @@ public class PlayerScript : CharacterScript
             Debug.Log("You hit an enemy");
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             StartCoroutine("FadeOut");
-            SceneManager.instance.HitEnemy();
+            SceneManager.instance.PlayerDied();
         }
         else if(target.tag == "Goal")
         {

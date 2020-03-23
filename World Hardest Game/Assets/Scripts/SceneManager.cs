@@ -35,13 +35,12 @@ public class SceneManager : MonoBehaviour
         if(timer >= interpolationPeriod && gotBall)
         {
             timer = 0.0f;
-            StartCoroutine(CameraShake(0.25f));
+            StartCoroutine(cam.GetComponent<CameraShaker>().Shake(0.25f, 0.4f));
         }
     }
 
-    public void HitEnemy()
+    public void PlayerDied()
     {
-        //Time.timeScale = 0f;
         FindObjectOfType<AudioManager>().PlayAudio("PlayerDeath");
         StartCoroutine(Restart());
     }
@@ -55,9 +54,12 @@ public class SceneManager : MonoBehaviour
     public void BallCatched()
     {
         FindObjectOfType<AudioManager>().PlayAudio("Catch");
+
         goldenBall.GetComponent<SpriteRenderer>().enabled = false;
         goldenBall.GetComponent<CircleCollider2D>().enabled = false;
+
         goal.SetActive(true);
+
         allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in allEnemies)
         {
@@ -65,8 +67,11 @@ public class SceneManager : MonoBehaviour
             enemy.GetComponent<EnemyScript>().speed += enemy.GetComponent<EnemyScript>().speed * speedUp;
         }
         player.GetComponent<PlayerScript>().speed += player.GetComponent<PlayerScript>().speed * (speedUp + 0.1f);
-        Debug.Log("Congratulations, you catched the Golden Ball, now, run back to your base!!");
-        StartCoroutine(CameraShake(0.4f));
+
+        Debug.Log("You catched the Golden Ball, now, run back to your base!!");
+
+        StartCoroutine(cam.GetComponent<CameraShaker>().Shake(0.4f, 0.5f));
+
         gotBall = true;
     }
 
@@ -88,23 +93,7 @@ public class SceneManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(0f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
-
-    IEnumerator CameraShake(float duration)
-    {
-        FindObjectOfType<AudioManager>().PlayAudio("Explosion");
-        Vector3 originalPos = cam.transform.localPosition;
-        float timeElapsed = 0.0f;
-        while(timeElapsed < duration)
-        {
-            float x = Random.Range(-1f, 1f)*0.4f;
-            float y = Random.Range(-1f, 1f)*0.4f;
-            cam.transform.localPosition = new Vector3(x, y, originalPos.z);
-            timeElapsed += Time.deltaTime;
-            yield return null;
-        }
-        cam.transform.localPosition = originalPos;
-    }
-
+        
     public void PauseGame()
     {
         pauseButton.SetActive(false);

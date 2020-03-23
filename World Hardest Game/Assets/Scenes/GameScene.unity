@@ -850,6 +850,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -865,6 +866,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 750b063669844c447ac7b65f1a3b0840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1439,16 +1452,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 253905653}
-  enemies:
-  - {fileID: 1693626266}
-  - {fileID: 961406235}
-  - {fileID: 1350685280}
-  - {fileID: 543801212}
-  - {fileID: 1069581778}
-  goalEnemies:
-  - {fileID: 1074912320}
-  - {fileID: 215421744}
-  - {fileID: 783447497}
   allEnemies: []
   goldenBall: {fileID: 1986849986}
   goal: {fileID: 409542985}
