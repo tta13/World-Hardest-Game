@@ -23,9 +23,7 @@ public class EnemyScript : CharacterScript
     void OnTriggerEnter2D(Collider2D target)
     {
         if(target.tag == "BounceBall")
-        {
             moveLeft = !moveLeft;
-        }
     }
 
 }

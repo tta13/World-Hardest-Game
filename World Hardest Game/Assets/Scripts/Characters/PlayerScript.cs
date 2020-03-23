@@ -7,7 +7,7 @@ public class PlayerScript : CharacterScript
     [SerializeField]
     private float minX, maxX, minY, maxY;
     
-    private float horizontal, vertical;
+    private float horizontalMove, verticalMove;
 
     private SpriteRenderer rend;
 
@@ -20,13 +20,13 @@ public class PlayerScript : CharacterScript
     {
         float x = Random.Range(minX, maxX);
         float y = Random.Range(minY, maxY);
-        gameObject.transform.position = new Vector2(x, y);
+        transform.position = new Vector2(x, y);
     }
 
     void GetInput()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        horizontalMove = Input.GetAxisRaw("Horizontal");
+        verticalMove = Input.GetAxisRaw("Vertical");
     }
 
     private void Update()
@@ -36,8 +36,8 @@ public class PlayerScript : CharacterScript
 
     public override void Move()
     {
-        transform.position += Vector3.right * speed * horizontal * Time.fixedDeltaTime;
-        transform.position += Vector3.up * speed * vertical * Time.fixedDeltaTime;
+        transform.position += Vector3.right * speed * horizontalMove * Time.fixedDeltaTime;
+        transform.position += Vector3.up * speed * verticalMove * Time.fixedDeltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D target)

@@ -19,7 +19,7 @@ public class SceneManager : MonoBehaviour
     #endregion
 
     #region PrivateFields
-    private float speedUp = 0.5f;
+    [SerializeField] private float speedUp = 0.5f;
     private bool gotBall = false;
     private float interpolationPeriod = 2.0f;
     private float timer = 0.0f;
@@ -40,7 +40,7 @@ public class SceneManager : MonoBehaviour
         if(timer >= interpolationPeriod && gotBall)
         {
             timer = 0.0f;
-            StartCoroutine(cam.GetComponent<CameraShaker>().Shake(0.25f, 0.4f));
+            StartCoroutine(cam.GetComponent<CameraShaker>().Shake(0.2f, 0.4f));
         }
     }
     #endregion
@@ -51,7 +51,6 @@ public class SceneManager : MonoBehaviour
         FindObjectOfType<AudioManager>().PlayAudio("PlayerDeath");
         StartCoroutine(Restart(1f));
     }
-
 
     public void BallCatched()
     {
@@ -134,4 +133,5 @@ public class SceneManager : MonoBehaviour
         pauseButton.SetActive(true);
     }
     #endregion
+
 }

@@ -1460,7 +1460,6 @@ MonoBehaviour:
   winPanel: {fileID: 544735837}
   pauseButton: {fileID: 328683031}
   pausePanel: {fileID: 1905061010}
-  speedUp: 0.5
 --- !u!4 &838311142
 Transform:
   m_ObjectHideFlags: 0
@@ -2059,7 +2058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.700012, y: -1}
+  m_AnchoredPosition: {x: -4.700012, y: 17}
   m_SizeDelta: {x: -92.1, y: -171.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1196214349
@@ -2082,7 +2081,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
