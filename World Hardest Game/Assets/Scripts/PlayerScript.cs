@@ -16,7 +16,7 @@ public class PlayerScript : CharacterScript
         rend = GetComponent<SpriteRenderer>();
     }
 
-    public override void SetInitialPos()
+    public override void Init()
     {
         float x = Random.Range(minX, maxX);
         float y = Random.Range(minY, maxY);

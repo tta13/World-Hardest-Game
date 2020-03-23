@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyScript : CharacterScript
 {
-    public float enemySpeed = 4.0f;
     [SerializeField]
     private bool moveLeft;
 
-    void FixedUpdate()
+    public override void Init()
+    {
+        speed = 4f;
+    }
+
+    public override void Move()
     {
         if(moveLeft)
-        {
-            transform.position += Vector3.left * enemySpeed * Time.fixedDeltaTime;
-        }
+            transform.position += Vector3.left * speed * Time.fixedDeltaTime;
         else
-        {
-            transform.position += Vector3.right * enemySpeed * Time.fixedDeltaTime;
-        }
+            transform.position += Vector3.right * speed * Time.fixedDeltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D target)

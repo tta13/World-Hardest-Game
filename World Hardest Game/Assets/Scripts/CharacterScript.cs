@@ -6,17 +6,15 @@ public abstract class CharacterScript : MonoBehaviour
 {
     public float speed;
     
-    [SerializeField]
-    private float x, y;
 
     void Start()
     {
-        SetInitialPos();
+        Init();
     }
 
-    public virtual void SetInitialPos()
+    public virtual void Init()
     {
-        gameObject.transform.position = new Vector2(x, y);
+
     }
 
     private void FixedUpdate()

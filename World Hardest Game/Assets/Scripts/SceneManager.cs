@@ -7,8 +7,6 @@ public class SceneManager : MonoBehaviour
     public static SceneManager instance;
 
     public GameObject player;
-    public GameObject[] enemies;
-    public GameObject[] goalEnemies;
     public GameObject[] allEnemies;
     public GameObject goldenBall;
     public GameObject goal;
@@ -18,12 +16,7 @@ public class SceneManager : MonoBehaviour
     public GameObject pauseButton;
     public GameObject pausePanel;
     public float speedUp = 0.5f;
-    
-    public Vector2 initialEvenEnemyPosition = new Vector2(-3.5f, 2.0f);
-    public Vector2 initialOddEnemyPosition = new Vector2(3.5f, 1.0f);
-    public Vector2 initialOddGoalEnemyPosition = new Vector2(7.6f, 0.0f);
-    public Vector2 initialEvenGoalEnemyPosition = new Vector2(5.5f, 2.0f);
-
+   
     private bool gotBall = false;
     private float interpolationPeriod = 2.0f;
     private float timer = 0.0f;
@@ -34,37 +27,6 @@ public class SceneManager : MonoBehaviour
             instance = this;
         Time.timeScale = 1f;
         goal.SetActive(false);
-    }
-
-    void Start()
-    {
-        for(int i = 0; i<enemies.Length; i++)
-        {
-            if(i%2 == 0)
-            {
-                enemies[i].transform.position = initialEvenEnemyPosition;
-                initialEvenEnemyPosition -= new Vector2(0.0f, 2.0f);
-            }
-            else
-            {
-                enemies[i].transform.position = initialOddEnemyPosition;
-                initialOddEnemyPosition -= new Vector2(0.0f, 2.0f);
-            }
-        }
-
-        for (int i = 0; i < goalEnemies.Length; i++)
-        {
-            if (i % 2 == 0)
-            {
-                goalEnemies[i].transform.position = initialEvenGoalEnemyPosition;
-                initialEvenGoalEnemyPosition -= new Vector2(0.0f, 3.0f);
-            }
-            else
-            {
-                goalEnemies[i].transform.position = initialOddGoalEnemyPosition;
-                initialOddGoalEnemyPosition -= new Vector2(0.0f, 3.0f);
-            }
-        }
     }
 
     void FixedUpdate()
@@ -100,7 +62,7 @@ public class SceneManager : MonoBehaviour
         foreach (GameObject enemy in allEnemies)
         {
             Debug.Log("Speeding Up Enemies");
-            enemy.GetComponent<EnemyScript>().enemySpeed += enemy.GetComponent<EnemyScript>().enemySpeed * speedUp;
+            enemy.GetComponent<EnemyScript>().speed += enemy.GetComponent<EnemyScript>().speed * speedUp;
         }
         player.GetComponent<PlayerScript>().speed += player.GetComponent<PlayerScript>().speed * (speedUp + 0.1f);
         Debug.Log("Congratulations, you catched the Golden Ball, now, run back to your base!!");
