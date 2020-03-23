@@ -5,10 +5,17 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public float playerSpeed = 2.0f;
-    SpriteRenderer rend;
+
+    [SerializeField]
+    private float minX, maxX, minY, maxY;
+
+    private SpriteRenderer rend;
 
     void Start()
     {
+        float x = Random.Range(minX, maxX);
+        float y = Random.Range(minY, maxY);
+        gameObject.transform.position = new Vector2(x, y);
         rend = GetComponent<SpriteRenderer>();
     }
 

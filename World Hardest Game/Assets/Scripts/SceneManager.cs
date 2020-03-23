@@ -39,9 +39,6 @@ public class SceneManager : MonoBehaviour
 
     void Start()
     {
-        float x = Random.Range(-8f, -5.5f);
-        float y = Random.Range(-3.5f, 0f);
-        player.transform.position = new Vector2(x, y);
         goldenBall.transform.position = initianGoldenBallPosition;
         for(int i = 0; i<enemies.Length; i++)
         {
