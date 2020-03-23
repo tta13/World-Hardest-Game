@@ -495,7 +495,7 @@ MonoBehaviour:
   minX: -8
   maxX: -5.5
   minY: -3.5
-  maxT: 0
+  maxY: 0
 --- !u!50 &253905658
 Rigidbody2D:
   serializedVersion: 4
@@ -3412,10 +3412,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1986849986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95eec186fe3c145488a360c161d2f08d, type: 3}
+  m_Script: {fileID: 11500000, guid: 79d2ad9a7689ed34cae0e9b6db3b85b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationRate: 120
+  x: 6.6
+  y: -3
+  rotationRate: 100
 --- !u!1 &2062104410
 GameObject:
   m_ObjectHideFlags: 0

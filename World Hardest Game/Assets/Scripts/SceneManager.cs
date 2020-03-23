@@ -23,7 +23,6 @@ public class SceneManager : MonoBehaviour
     public Vector2 initialOddEnemyPosition = new Vector2(3.5f, 1.0f);
     public Vector2 initialOddGoalEnemyPosition = new Vector2(7.6f, 0.0f);
     public Vector2 initialEvenGoalEnemyPosition = new Vector2(5.5f, 2.0f);
-    public Vector2 initianGoldenBallPosition = new Vector2(6.5f, -3.0f);
 
     private bool gotBall = false;
     private float interpolationPeriod = 2.0f;
@@ -39,7 +38,6 @@ public class SceneManager : MonoBehaviour
 
     void Start()
     {
-        goldenBall.transform.position = initianGoldenBallPosition;
         for(int i = 0; i<enemies.Length; i++)
         {
             if(i%2 == 0)

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateScript : MonoBehaviour
+public class GoldenBallScript : CharacterScript
 {
-    public float rotationRate = 50.0f;
+    [SerializeField]
+    private float rotationRate;
 
-    void FixedUpdate()
+    public override void Move()
     {
         transform.Rotate(Vector3.up * rotationRate * Time.fixedDeltaTime);
     }
-
 }
