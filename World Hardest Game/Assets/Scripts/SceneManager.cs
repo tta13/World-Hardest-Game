@@ -102,7 +102,7 @@ public class SceneManager : MonoBehaviour
             Debug.Log("Speeding Up Enemies");
             enemy.GetComponent<EnemyScript>().enemySpeed += enemy.GetComponent<EnemyScript>().enemySpeed * speedUp;
         }
-        player.GetComponent<PlayerScript>().playerSpeed += player.GetComponent<PlayerScript>().playerSpeed * (speedUp + 0.1f);
+        player.GetComponent<PlayerScript>().speed += player.GetComponent<PlayerScript>().speed * (speedUp + 0.1f);
         Debug.Log("Congratulations, you catched the Golden Ball, now, run back to your base!!");
         StartCoroutine(CameraShake(0.4f));
         gotBall = true;

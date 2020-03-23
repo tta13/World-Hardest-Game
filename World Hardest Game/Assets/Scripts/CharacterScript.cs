@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class CharacterScript : MonoBehaviour
 {
+    public float speed;
+    
     [SerializeField]
     private float x, y;
 

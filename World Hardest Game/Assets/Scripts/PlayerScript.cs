@@ -2,45 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour
+public class PlayerScript : CharacterScript
 {
-    public float playerSpeed = 2.0f;
-
     [SerializeField]
     private float minX, maxX, minY, maxY;
+    
+    private float horizontal, vertical;
 
     private SpriteRenderer rend;
 
-    void Start()
+    private void Awake()
+    {
+        rend = GetComponent<SpriteRenderer>();
+    }
+
+    public override void SetInitialPos()
     {
         float x = Random.Range(minX, maxX);
         float y = Random.Range(minY, maxY);
         gameObject.transform.position = new Vector2(x, y);
-        rend = GetComponent<SpriteRenderer>();
     }
 
-    void FixedUpdate()
+    void GetInput()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.position += Vector3.up * playerSpeed * Time.fixedDeltaTime;
-            //Debug.Log("You clicked on W");
-        }
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position += Vector3.left * playerSpeed * Time.fixedDeltaTime;
-            //Debug.Log("You clicked on A");
-        }
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.position += Vector3.down * playerSpeed * Time.fixedDeltaTime;
-            //Debug.Log("You clicked on S");
-        }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += Vector3.right * playerSpeed * Time.fixedDeltaTime;
-            //Debug.Log("You clicked on D");
-        }
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
+    }
+
+    private void Update()
+    {
+        GetInput();
+    }
+
+    public override void Move()
+    {
+        transform.position += Vector3.right * speed * horizontal * Time.fixedDeltaTime;
+        transform.position += Vector3.up * speed * vertical * Time.fixedDeltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D target)

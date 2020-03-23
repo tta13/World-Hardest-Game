@@ -491,7 +491,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81aba0c6e0618d40b96c8242ec3daf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 2
+  speed: 2
+  x: 0
+  y: 0
   minX: -8
   maxX: -5.5
   minY: -3.5
@@ -1462,7 +1464,6 @@ MonoBehaviour:
   initialOddEnemyPosition: {x: 3.5, y: 1}
   initialOddGoalEnemyPosition: {x: 7.6, y: 0}
   initialEvenGoalEnemyPosition: {x: 5.5, y: 1.5}
-  initianGoldenBallPosition: {x: 6.6, y: -3}
 --- !u!4 &838311142
 Transform:
   m_ObjectHideFlags: 0
@@ -3415,6 +3416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d2ad9a7689ed34cae0e9b6db3b85b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   x: 6.6
   y: -3
   rotationRate: 100
